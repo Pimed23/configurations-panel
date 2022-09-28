@@ -1,0 +1,24 @@
+.message-fail {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #b71c1c;
+    background-color: #b71c1c;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.message-success {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #4c8c4a;
+    background-color: #4c8c4a;
+    border-radius: 5px;
+}
+
+.message-text {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}

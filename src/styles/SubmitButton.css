@@ -9,4 +9,16 @@
     border: 1.5px solid #1b1b1b;
     color: white;
     background-color: #1b1b1b;
+    transition-duration: 0.4s;
+}
+
+.SubmitButton .btn:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+.SubmitButton .btn:disabled {
+    background-color: #718792;
+    border: 1.5px solid #718792;
+    cursor: not-allowed;
 }

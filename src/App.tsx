@@ -7,7 +7,7 @@ import { SelectField } from './components/SelectField';
 import { HeaderField } from './components/HeaderField';
 import { SubmitButton } from './components/SubmitButton';
 import { FooterField } from './components/FooterField';
-// import { MessageField } from './components/MessageField';
+import { MessageField } from './components/MessageField';
 
 // Opciones de la lista Tipo de empresa
 const businessTypeList = [
@@ -39,6 +39,8 @@ const autoReplyCompleteList = [
 function App() {
 
     // States
+    const [formSended, setFormSended] = useState<boolean>(false);
+    const [isValid, setIsValid] = useState<boolean>(false);
     const [businessName, setBusinessName] = useState('');
     const [businessType, setBusinessType] = useState<string>('def');
     const [flowType, setFlowType] = useState<string>('def');
@@ -85,15 +87,27 @@ function App() {
 
         // Manejo de errores
         if(businessName === '') {
+            setIsValid(false);
             console.log('Error: Ingrese el Nombre de la Empresa...');
         } else if(businessType === 'def') {
+            setIsValid(false);
             console.log('Error: Seleccione el Tipo de Empresa...');
         } else if(flowType === 'def') {
+            setIsValid(false);
             console.log('Error: Seleccione el Flujo de Empresa...');
         } else if((flowType === 'rya' || flowType === 'res') && autoReplyType === 'def') {
+            setIsValid(false);
             console.log('Error: Seleccione el campo Auto respuesta...');
+        } else {
+            console.log('Setting true...');
+            setIsValid(true);
         }
+        
+        setFormSended(true);
+        setTimeout(() => {
+            setFormSended(false)}, 4000);
 
+        console.log(isValid);
         console.log(Object.fromEntries(data.entries()));
     }
 
@@ -108,7 +122,15 @@ function App() {
                         subtitle = 'Panel de control para administrar configuraciones'  
                     />
 
-                    <form onSubmit={handleSubmit}>
+                    {formSended &&
+                        <MessageField 
+                            type = {isValid ? 'Exito:' : 'Error:' }
+                            message = {isValid ? 'Se envio su respuesta' : 'Verifique los datos enviados...'}
+                            messageClass = {isValid ? 'message-success' : 'message-fail'}
+                        />
+                    }
+
+                    <form onSubmit = {handleSubmit}>
                         <InputField
                             title = 'Nombre de la empresa'
                             message = 'Inserte el nombre de la empresa'
@@ -137,6 +159,7 @@ function App() {
 
                         <SubmitButton
                             title = 'Enviar'
+                            disableBtn = {formSended ? true : false}
                         />
                     </form>
 
