@@ -7,5 +7,5 @@ Proyecto simple que muestra el funcionamiento básico de los principales hooks d
 Inicializará la aplicacion en nuestro navegador web. En caso de que no se abra puedes dirigirte a tu navegador y abrir:
 [http://localhost:3000](http://localhost:3000) para visualizarlo.
 
-# Vision general del aplicativo
+![alt text](https://raw.githubusercontent.com/Pimed23/configurations-panel/master/public/images/overview.png)
 
