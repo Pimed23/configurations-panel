@@ -124,8 +124,8 @@ function App() {
 
                     {formSended &&
                         <MessageField 
-                            type = {isValid ? 'Exito:' : 'Error:' }
-                            message = {isValid ? 'Se envio su respuesta' : 'Verifique los datos enviados...'}
+                            type = {isValid ? 'Éxito:' : 'Error:' }
+                            message = {isValid ? 'Se envió su respuesta' : 'Verifique los datos enviados...'}
                             messageClass = {isValid ? 'message-success' : 'message-fail'}
                         />
                     }
