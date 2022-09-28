@@ -1,6 +1,5 @@
-import React, {Fragment} from 'react';
-
-// Propos del componente SelectField
+import '../styles/SelectField.css'
+// Props del componente SelectField
 interface SelectFieldProps {
     title: string;
     setSelectedOption: (val: string) => void;
@@ -16,21 +15,21 @@ const SelectField = (props: SelectFieldProps) => {
     const {title, selectOptions, setSelectedOption} = props;
 
     return (
-        <Fragment>
-            <div>
-                <label>{title}</label>
-                <br/>
-                <select onChange={(e) => {setSelectedOption(e.target.value)}}>
-                    {selectOptions.map(element => (
-                        <option 
-                            key={element.key}
-                            value={element.value}>
-                            {element.option}
-                        </option>
-                    ))};
-                </select>
-            </div>
-        </Fragment>
+
+        <div className='SelectField'>
+            <label className='select-label'>{title}</label>
+            <br/>
+            {/* Generando el select con los selectOptions enviados*/}
+            <select className='select-box' onChange={(e) => {setSelectedOption(e.target.value)}}>
+                {selectOptions.map(element => (
+                    <option 
+                        key={element.key}
+                        value={element.value}>
+                        {element.option}
+                    </option>
+                ))};
+            </select>
+        </div>
     )
 }
 

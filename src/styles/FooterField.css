@@ -1,0 +1,10 @@
+.FooterField {
+    font-family: 'Raleway', sans-serif;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.FooterField a {
+    font-weight: bold;
+    color: black;
+}

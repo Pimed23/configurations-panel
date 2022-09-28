@@ -1,0 +1,23 @@
+.InputField {
+    padding-top: 10px;
+    padding-bottom: 8px;    
+    text-align: left;
+}
+
+.input-box {
+    width: 98%;
+    text-indent: 15px;
+    border-radius: 7px;
+    border: 1.5px solid #8e8e8e;
+    height: 35px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.input-label {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}

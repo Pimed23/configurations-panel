@@ -1,4 +1,4 @@
-import {Fragment} from 'react';
+import '../styles/HeaderField.css';
 
 // Props del componente InputField
 interface HeaderFieldProps {
@@ -11,10 +11,10 @@ const HeaderField = (props: HeaderFieldProps) => {
     const {title, subtitle} = props;
 
     return (
-        <Fragment>
+        <div className='HeaderField'>
             <h1>{title}</h1>
-            <h3>{subtitle}</h3>
-        </Fragment>
+            <h4 className='subtitle'>{subtitle}</h4>
+        </div>
     )
 }
 

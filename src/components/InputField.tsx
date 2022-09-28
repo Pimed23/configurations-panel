@@ -1,4 +1,4 @@
-import {Fragment} from 'react';
+import '../styles/InputField.css';
 
 // Props del componente InputField
 interface InputFieldProps {
@@ -12,17 +12,15 @@ const InputField = (props: InputFieldProps) => {
     const {title, message, setBusinessName} = props;
 
     return (
-        <Fragment>
-            <div>
-                <label>{title}</label>
-                <br/>
-                <input 
-                    name = 'businessName' 
-                    placeholder = {message}
-                    onChange={(e) => {setBusinessName(e.target.value)}}
-                ></input>
-            </div>
-        </Fragment>
+        <div className='InputField'>
+            <label className='input-label'>{title}</label>
+            <br/>
+            <input className='input-box'
+                name = 'businessName' 
+                placeholder = {message}
+                onChange={(e) => {setBusinessName(e.target.value)}}
+            ></input>
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-import {Fragment} from 'react';
+import '../styles/SubmitButton.css'
 
 // Props del componente SubmitButton
 interface SubmitButtonProps {
@@ -10,11 +10,9 @@ const SubmitButton = (props: SubmitButtonProps) => {
     const {title} = props;
 
     return (
-        <Fragment>
-            <div>
-                <button type='submit'>{title}</button>
-            </div>
-        </Fragment>
+        <div className='SubmitButton'>
+            <button className='btn' type='submit'>{title}</button>
+        </div>
     )
 }
 

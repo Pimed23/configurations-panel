@@ -4,8 +4,10 @@ import './App.css';
 // Utilizando named export para evitar errores
 import { InputField } from './components/InputField';
 import { SelectField } from './components/SelectField';
-import { HeaderField } from './components/Header';
+import { HeaderField } from './components/HeaderField';
 import { SubmitButton } from './components/SubmitButton';
+import { FooterField } from './components/FooterField';
+// import { MessageField } from './components/MessageField';
 
 // Opciones de la lista Tipo de empresa
 const businessTypeList = [
@@ -23,7 +25,7 @@ const flowCompleteList = [
     {key:'3', value:'ati', option:'Atiende'},
     {key:'4', value:'cyr', option:'Clasifica y responde'},
     {key:'5', value:'res', option:'Responde'}
-]
+];
 
 // Opciones de la lista Auto Respuesta 
 const autoReplyCompleteList = [
@@ -32,7 +34,7 @@ const autoReplyCompleteList = [
     {key:'2', value:'pdd', option:'Pedir datos y derivar'},
     {key:'3', value:'maa', option:'Manejo automático'},
     {key:'4', value:'cla', option:'Clasificación automática'},
-]
+];
 
 function App() {
 
@@ -97,42 +99,57 @@ function App() {
 
     return (
         <Fragment>
-            <HeaderField
-                title = 'Panel de Configuración'
-                subtitle = 'Panel de control para administrar configuraciones'  
-            />
+            <div className='container'>
+                <img src='/images/logo.png' alt=''></img>
 
-            <form onSubmit={handleSubmit}>
-                <InputField
-                    title = 'Nombre de la empresa'
-                    message = 'Inserte el nombre de la empresa'
-                    setBusinessName = {setBusinessName}
-                />
+                <div className='container-text'>
+                    <HeaderField
+                        title = 'Panel de Configuración'
+                        subtitle = 'Panel de control para administrar configuraciones'  
+                    />
 
-                <SelectField
-                    title = 'Tipo de empresa'
-                    selectOptions = {businessTypeList}
-                    setSelectedOption = {setBusinessType}
-                />
+                    <form onSubmit={handleSubmit}>
+                        <InputField
+                            title = 'Nombre de la empresa'
+                            message = 'Inserte el nombre de la empresa'
+                            setBusinessName = {setBusinessName}
+                        />
 
-                <SelectField
-                    title = 'Flujo'
-                    selectOptions = {flowTypeList}
-                    setSelectedOption = {setFlowType}
-                />
+                        <SelectField
+                            title = 'Tipo de empresa'
+                            selectOptions = {businessTypeList}
+                            setSelectedOption = {setBusinessType}
+                        />
 
-                {(flowType === 'rya' || flowType === 'res') &&
-                <SelectField
-                    title = 'Auto Respuesta'
-                    selectOptions = {autoReplyTypeList}
-                    setSelectedOption = {setAutoReplyType}
-                />
-                }
+                        <SelectField
+                            title = 'Flujo'
+                            selectOptions = {flowTypeList}
+                            setSelectedOption = {setFlowType}
+                        />
 
-                <SubmitButton
-                    title = 'Enviar'
-                />
-            </form>
+                        {(flowType === 'rya' || flowType === 'res') &&
+                        <SelectField
+                            title = 'Auto Respuesta'
+                            selectOptions = {autoReplyTypeList}
+                            setSelectedOption = {setAutoReplyType}
+                        />
+                        }
+
+                        <SubmitButton
+                            title = 'Enviar'
+                        />
+                    </form>
+
+                    <FooterField
+                        message = 'Tienes algún problema? '
+                        link = 'Contáctanos' 
+                    />
+                    
+                </div>
+                <div className='container-img'>
+                    <img src='/images/image.jpg' alt=''></img>
+                </div>
+            </div>
         </Fragment>
     );
 }
