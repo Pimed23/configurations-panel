@@ -47,7 +47,7 @@ function App() {
     const [flowTypeList, setFlowTypeList] = useState([flowCompleteList[0]]);
     const [autoReplyType, setAutoReplyType] = useState<string>('def')
     const [autoReplyTypeList, setAutoReplyTypeList] = useState([flowCompleteList[0]])
-
+    
     // Effects
     // Controla la lista de flujo a partir del tipo de empresa elegido
     useEffect(() => {
@@ -56,9 +56,9 @@ function App() {
         setAutoReplyType('def');
 
         if(businessType === 'dlv') {
-        tempFlowList.push(flowCompleteList[1], flowCompleteList[2], flowCompleteList[3]);
+            tempFlowList.push(flowCompleteList[1], flowCompleteList[2], flowCompleteList[3]);
         } else if(businessType === 'sl' || businessType === 'msj') {
-        tempFlowList.push(flowCompleteList[4], flowCompleteList[5]);
+            tempFlowList.push(flowCompleteList[4], flowCompleteList[5]);
         }
         setFlowTypeList(tempFlowList);
     }, [businessType]);
@@ -69,9 +69,9 @@ function App() {
         setAutoReplyType('def');
 
         if(flowType === 'rya') {
-        tempList.push(autoReplyCompleteList[1], autoReplyCompleteList[2], autoReplyCompleteList[3])
+            tempList.push(autoReplyCompleteList[1], autoReplyCompleteList[2], autoReplyCompleteList[3])
         } else if(flowType === 'res') {
-        tempList.push(autoReplyCompleteList[1], autoReplyCompleteList[4]);
+            tempList.push(autoReplyCompleteList[1], autoReplyCompleteList[4]);
         }
         setAutoReplyTypeList(tempList);
     }, [flowType]);
@@ -141,12 +141,14 @@ function App() {
                             title = 'Tipo de empresa'
                             selectOptions = {businessTypeList}
                             setSelectedOption = {setBusinessType}
+                            value = {businessType}
                         />
 
                         <SelectField
                             title = 'Flujo'
                             selectOptions = {flowTypeList}
                             setSelectedOption = {setFlowType}
+                            value = {flowType}
                         />
 
                         {(flowType === 'rya' || flowType === 'res') &&
@@ -154,6 +156,7 @@ function App() {
                             title = 'Auto Respuesta'
                             selectOptions = {autoReplyTypeList}
                             setSelectedOption = {setAutoReplyType}
+                            value = {autoReplyType}
                         />
                         }
 

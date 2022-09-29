@@ -8,11 +8,12 @@ interface SelectFieldProps {
         value: string, 
         option: string
     }[];
+    value: string;
 }
 
 const SelectField = (props: SelectFieldProps) => {
 
-    const {title, selectOptions, setSelectedOption} = props;
+    const {title, value, selectOptions, setSelectedOption} = props;
 
     return (
 
@@ -20,7 +21,7 @@ const SelectField = (props: SelectFieldProps) => {
             <label className='select-label'>{title}</label>
             <br/>
             {/* Generando el select con los selectOptions enviados*/}
-            <select className='select-box' onChange={(e) => {setSelectedOption(e.target.value)}}>
+            <select className='select-box' value={value} onChange={(e) => {setSelectedOption(e.target.value)}}>
                 {selectOptions.map(element => (
                     <option 
                         key={element.key}
