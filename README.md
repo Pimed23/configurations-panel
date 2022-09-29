@@ -9,3 +9,7 @@ Inicializará la aplicacion en nuestro navegador web. En caso de que no se abra 
 
 ![alt text](https://raw.githubusercontent.com/Pimed23/configurations-panel/master/public/images/overview.png)
 
+### deploy en Vercel
+
+https://configurations-panel-p3c7.vercel.app/
+
