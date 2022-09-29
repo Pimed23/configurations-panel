@@ -11,5 +11,4 @@ Inicializará la aplicacion en nuestro navegador web. En caso de que no se abra 
 
 ### deploy en Vercel
 
-https://configurations-panel-p3c7.vercel.app/
-
+https://configurations-panel-a5r8.vercel.app/
